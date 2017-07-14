@@ -1,4 +1,4 @@
-import speech
+import speech # iOS speech recognition and synthesis library
 
 words = "Pythonista is crazy cool!"  #"Hello world!"
 #lang = speech.get_synthesis_languages()
@@ -7,14 +7,14 @@ words = "Pythonista is crazy cool!"  #"Hello world!"
 #print("Recognition languages: " + str(speech.get_recognition_languages()) + "\n")
 
 #print(lang)
-speech.say(words)
+speech.say(words) # speak the contents of the var ‘words’
 
-#while speech.is_speaking():
+#while speech.is_speaking(): # returns boolean value representing if playback is currently ongoing
 #	print("Speaking")
 
 print('\n')
 
-import qrcode
+import qrcode # QR code generating library
 
 #img = qrcode.make("https://www.google.com")
 #img.show()
@@ -33,14 +33,14 @@ import qrcode
 #img2.show()
 
 dMessage = qrcode.make("I love you, babe!")
-dMessage.show()
+dMessage.show() # display image over console
 
 print('\n')
 
-import location
+import location # iOS location information library
 
 if location.is_authorized():
-	location.start_updates()
+	location.start_updates() # start checking for location information, may speed up response to ‘get_location()’
 	print(location.get_location())
 
 	address = {'Street': 'Victoria Gardens Blvd', 'City': 'Port Orange', 'Country': 'USA'}
@@ -50,7 +50,7 @@ if location.is_authorized():
 
 	print("Reverse geocode: " + str(location.reverse_geocode(location.get_location())))
 
-	location.stop_updates()
+	location.stop_updates() # stop checking the current location
 	
 print('\n')
 
